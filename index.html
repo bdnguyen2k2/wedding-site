@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation - Hòa My & Văn Quốc</title>
+  <meta name="description" content="Thiệp mời đám cưới Bùi Hòa My & Trần Văn Quốc - 25.04.2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ==================== ENVELOPE OVERLAY ==================== -->
+  <div id="envelope-overlay">
+    <div class="petals-bg" id="petals-bg"></div>
+    <div class="envelope-scene">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="letter" id="letter">
+          <div class="letter-border">
+            <div class="letter-corner tl"></div>
+            <div class="letter-corner tr"></div>
+            <div class="letter-corner bl"></div>
+            <div class="letter-corner br"></div>
+            <p class="letter-icon">💌</p>
+            <p class="letter-label">You're Invited</p>
+            <h1 class="letter-title">Mời <span id="guest-name-letter">Quý Khách</span></h1>
+            <p class="letter-text">tham gia tiệc cưới của chúng tôi</p>
+            <div class="letter-divider"><span></span><i>♥</i><span></span></div>
+            <p class="letter-names">Hòa My & Văn Quốc</p>
+            <p class="letter-date">25 . 04 . 2026</p>
+          </div>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="envelope-flap" id="envelope-flap"></div>
+      </div>
+      <button id="open-btn" class="open-btn" style="display:none">
+        <span>💌 Mở thiệp mời</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== MUSIC TOGGLE ==================== -->
+  <button id="music-toggle" class="music-toggle" title="Bật/Tắt nhạc">
+    <span id="music-icon">🎵</span>
+  </button>
+
+  <!-- ==================== FLOATING HEARTS ==================== -->
+  <div class="floating-hearts" id="floating-hearts"></div>
+
+  <!-- SVG Defs (hidden) — reusable ornaments -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <symbol id="floral-swirl" viewBox="0 0 200 40">
+        <path d="M0 20 Q25 5 50 20 T100 20 T150 20 T200 20" fill="none" stroke="currentColor" stroke-width="1.2"
+          opacity=".4" />
+        <circle cx="50" cy="20" r="3" fill="currentColor" opacity=".3" />
+        <circle cx="100" cy="20" r="4" fill="currentColor" opacity=".25" />
+        <circle cx="150" cy="20" r="3" fill="currentColor" opacity=".3" />
+      </symbol>
+      <symbol id="corner-flourish" viewBox="0 0 100 100">
+        <path d="M5 95 Q5 50 30 30 Q55 10 95 5" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".5" />
+        <path d="M10 85 Q12 55 35 38 Q55 22 85 15" fill="none" stroke="currentColor" stroke-width="1" opacity=".3" />
+        <circle cx="18" cy="70" r="4" fill="currentColor" opacity=".2" />
+        <circle cx="70" cy="18" r="4" fill="currentColor" opacity=".2" />
+        <path d="M15 78 Q10 65 25 60" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35" />
+        <path d="M60 15 Q72 10 78 25" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main id="main-content" class="main-content main-hidden">
+
+    <!-- ===== SECTION 1: Thiệp Cưới (Hero) — luxury ===== -->
+    <section class="section section-hero" id="section-hero">
+      <div class="section-bg-pattern"></div>
+      <!-- Sparkle particles injected by JS -->
+      <div class="sparkles" id="hero-sparkles"></div>
+
+      <div class="hero-frame reveal">
+        <!-- Outer ornament border -->
+        <div class="hero-border-outer"></div>
+        <!-- Inner ornament border -->
+        <div class="hero-border-inner"></div>
+
+        <!-- Corner flourishes (SVG) -->
+        <svg class="corner-fl corner-fl-tl">
+          <use href="#corner-flourish" />
+        </svg>
+        <svg class="corner-fl corner-fl-tr">
+          <use href="#corner-flourish" />
+        </svg>
+        <svg class="corner-fl corner-fl-bl">
+          <use href="#corner-flourish" />
+        </svg>
+        <svg class="corner-fl corner-fl-br">
+          <use href="#corner-flourish" />
+        </svg>
+
+        <!-- Top swirl ornament -->
+        <div class="hero-swirl-top reveal-child" data-delay="0">
+          <svg class="swirl-svg">
+            <use href="#floral-swirl" />
+          </svg>
+        </div>
+
+        <p class="hero-sub reveal-child" data-delay="80">✦ OUR WEDDING ✦</p>
+
+        <h1 class="hero-title reveal-child" data-delay="160">
+          <span class="script">Thiệp</span>
+          <span class="the">Mời</span>
+          <span class="script">Cưới</span>
+        </h1>
+
+        <!-- Gold diamond divider -->
+        <div class="hero-gold-divider reveal-child" data-delay="240">
+          <span class="gd-wing">───</span>
+          <span class="gd-diamond">◆</span>
+          <span class="gd-heart">♥</span>
+          <span class="gd-diamond">◆</span>
+          <span class="gd-wing">───</span>
+        </div>
+
+        <!-- Couple photo with double ring -->
+        <div class="hero-photo-area reveal-child" data-delay="320">
+          <div class="photo-ring-outer">
+            <div class="photo-ring-middle">
+              <div class="photo-ring-inner">
+                <img src="./assets//image/9.jpg" alt="Couple" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="hero-names reveal-child" data-delay="420">
+          <span class="bride-name">Hòa My</span>
+          <span class="amp">&</span>
+          <span class="bride-name">Văn Quốc</span>
+        </h2>
+
+        <div class="hero-date-row reveal-child" data-delay="520">
+          <span class="date-star">✦</span>
+          <p class="hero-date">25 . 04 . 2026</p>
+          <span class="date-star">✦</span>
+        </div>
+
+        <!-- Bottom swirl ornament -->
+        <div class="hero-swirl-bottom reveal-child" data-delay="600">
+          <svg class="swirl-svg swirl-flip">
+            <use href="#floral-swirl" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: Thông Tin Gia Đình — light theme matching Section 3 ===== -->
+    <section class="section section-family" id="section-family">
+      <div class="section-bg-pattern"></div>
+
+      <div class="family-frame reveal">
+        <!-- Ornament corners like Section 3 -->
+        <div class="ornament-frame">
+          <div class="ornament-corner oc-tl"></div>
+          <div class="ornament-corner oc-tr"></div>
+          <div class="ornament-corner oc-bl"></div>
+          <div class="ornament-corner oc-br"></div>
+        </div>
+
+        <!-- Top divider -->
+        <div class="invitation-divider reveal-child" data-delay="0">
+          <span class="line"></span>
+          <span class="heart">💍</span>
+          <span class="line"></span>
+        </div>
+
+        <h2 class="family-heading reveal-child" data-delay="80">Thông Tin Gia Đình</h2>
+        <p class="family-subtitle reveal-child" data-delay="140">Trân trọng báo tin hỷ sự</p>
+
+        <div class="family-layout">
+          <!-- Nhà Gái -->
+          <div class="fcard reveal-child" data-delay="200">
+            <div class="fcard-inner">
+              <div class="fcard-accent fcard-accent-tl"></div>
+              <div class="fcard-accent fcard-accent-tr"></div>
+              <div class="fcard-accent fcard-accent-bl"></div>
+              <div class="fcard-accent fcard-accent-br"></div>
+              <div class="fcard-ribbon">Nhà Gái</div>
+              <div class="fcard-divider"><span></span></div>
+              <p class="fcard-parent">Ông: <strong>Bùi Văn Lên</strong></p>
+              <p class="fcard-parent">Bà: <strong>Nguyễn Thị Thanh Hoà</strong></p>
+              <div class="fcard-location">
+                <span class="fcard-pin">📍</span>
+                <p>X. Long Mây - Thôn 3<br />X. Tây Sơn - T. Gia Lai</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center couple photo -->
+          <!-- <div class="family-center reveal-child" data-delay="300">
+            <div class="family-photo-ring">
+              <img src="./assets/image/8.jpg" alt="Couple" />
+            </div>
+            <div class="family-heart-badge">♥</div>
+          </div> -->
+
+          <div class="inv-event-divider reveal-child" data-delay="550">
+            <div class="v-line"></div>
+          </div>
+
+          <!-- Nhà Trai -->
+          <div class="fcard reveal-child" data-delay="400">
+            <div class="fcard-inner">
+              <div class="fcard-accent fcard-accent-tl"></div>
+              <div class="fcard-accent fcard-accent-tr"></div>
+              <div class="fcard-accent fcard-accent-bl"></div>
+              <div class="fcard-accent fcard-accent-br"></div>
+              <div class="fcard-ribbon">Nhà Trai</div>
+              <div class="fcard-divider"><span></span></div>
+              <p class="fcard-parent">Ông: <strong>Trần Văn Của</strong></p>
+              <p class="fcard-parent">Bà: <strong>Văn Thị Hưng</strong></p>
+              <div class="fcard-location">
+                <span class="fcard-pin">📍</span>
+                <p>Xóm Cao - Thôn 3<br />X. Tây Sơn - T. Gia Lai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom divider -->
+        <div class="invitation-divider reveal-child" data-delay="500">
+          <span class="line"></span>
+          <span class="heart">💍</span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: Trân Trọng Kính Mời (Invitation) ===== -->
+    <section class="section section-invitation" id="section-invitation">
+      <div class="section-bg-pattern"></div>
+      <div class="invitation-frame reveal">
+        <div class="ornament-frame">
+          <div class="ornament-corner oc-tl"></div>
+          <div class="ornament-corner oc-tr"></div>
+          <div class="ornament-corner oc-bl"></div>
+          <div class="ornament-corner oc-br"></div>
+        </div>
+        <h2 class="invitation-heading reveal-child" data-delay="0">Trân Trọng Kính Mời</h2>
+        <p class="invitation-guest reveal-child" data-delay="150">
+          <span id="invitation-guest-name">Quý Khách</span> cùng gia đình
+        </p>
+        <p class="invitation-text reveal-child" data-delay="250">Tới dự Lễ Vu Quy của hai con chúng tôi</p>
+        <div class="invitation-divider reveal-child" data-delay="300">
+          <span class="line"></span><span class="heart">♥</span><span class="line"></span>
+        </div>
+        <h3 class="invitation-couple reveal-child" data-delay="400">Bùi Hòa My & Trần Văn Quốc</h3>
+
+        <div class="invitation-events">
+          <div class="inv-event reveal-child" data-delay="500">
+            <div class="inv-event-label">Lễ Vu Quy</div>
+            <div class="inv-event-icon">🏡</div>
+            <p class="inv-event-location">Tư Gia Nữ</p>
+            <div class="inv-event-time">07:00</div>
+            <div class="inv-event-date">25 . 04 . 2026</div>
+            <p class="inv-event-lunar">(Nhằm ngày 09 tháng 03 năm Bính Ngọ)</p>
+          </div>
+          <div class="inv-event-divider reveal-child" data-delay="550">
+            <div class="v-line"></div>
+          </div>
+          <div class="inv-event reveal-child" data-delay="600">
+            <div class="inv-event-label">Tiệc Mừng</div>
+            <div class="inv-event-icon">🎉</div>
+            <p class="inv-event-location">Sân Bóng Long Mây</p>
+            <p class="inv-event-address">Xóm Long Mây - Thôn 3 - X. Tây Sơn<br />Tỉnh Gia Lai</p>
+            <div class="inv-event-time">11:30 <span class="time-note">Thứ Sáu</span></div>
+            <div class="inv-event-date">24 . 04 . 2026</div>
+            <p class="inv-event-lunar">(Nhằm ngày 08 tháng 03 năm Bính Ngọ)</p>
+          </div>
+        </div>
+
+        <div class="invitation-closing reveal-child" data-delay="700">
+          <p class="closing-text">Sự hiện diện của Quý Khách<br />là niềm vinh hạnh của gia đình chúng tôi!</p>
+          <p class="closing-kinhmoi">Kính mời!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: Wedding Album — all 9 images, balanced grid ===== -->
+    <section class="section section-album" id="section-album">
+      <div class="section-bg-floral"></div>
+      <div class="album-container">
+        <h2 class="section-heading reveal-child" data-delay="0">Album Hình Cưới</h2>
+        <p class="album-subtitle reveal-child" data-delay="100">Những khoảnh khắc đáng nhớ của chúng tôi</p>
+        <div class="album-grid">
+          <div class="album-cell reveal-child" data-delay="100">
+            <img src="./assets/image/7.jpg" alt="Ảnh cưới 1" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="180">
+            <img src="./assets/image/1.jpg" alt="Ảnh cưới 2" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="100">
+            <img src="./assets/image/2.jpg" alt="Ảnh cưới 3" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="200">
+            <img src="./assets/image/3.jpg" alt="Ảnh cưới 4" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="280">
+            <img src="./assets/image/4.jpg" alt="Ảnh cưới 5" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell album-cell-wide reveal-child" data-delay="150">
+            <img src="./assets/image/5.jpg" alt="Ảnh cưới 6" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="250">
+            <img src="./assets/image/6.jpg" alt="Ảnh cưới 7" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="320">
+            <img src="./assets/image/8.jpg" alt="Ảnh cưới 8" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+          <div class="album-cell reveal-child" data-delay="200">
+            <img src="./assets/image/9.jpg" alt="Ảnh cưới 9" loading="lazy" />
+            <div class="album-overlay"><span>💕</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: RSVP ===== -->
+    <section class="section section-rsvp" id="section-rsvp">
+      <div class="section-bg-pattern"></div>
+      <div class="rsvp-container reveal">
+        <div class="rsvp-card">
+          <div class="ornament-frame">
+            <div class="ornament-corner oc-tl"></div>
+            <div class="ornament-corner oc-tr"></div>
+            <div class="ornament-corner oc-bl"></div>
+            <div class="ornament-corner oc-br"></div>
+          </div>
+          <h2 class="section-heading reveal-child" data-delay="0">Xác Nhận Tham Dự</h2>
+          <p class="rsvp-text reveal-child" data-delay="100" id="rsvp-guest-text">
+            Xin hãy xác nhận để chúng tôi chuẩn bị chu đáo hơn nhé!
+          </p>
+          <div class="rsvp-photo reveal-child" data-delay="200">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=500&h=300&fit=crop"
+              alt="Wedding" />
+          </div>
+          <div class="rsvp-buttons reveal-child" data-delay="300">
+            <button class="rsvp-btn rsvp-yes" id="btn-attend" data-response="Tham dự">
+              <span class="btn-icon">✓</span> Tham dự
+            </button>
+            <button class="rsvp-btn rsvp-no" id="btn-decline" data-response="Không tham dự">
+              <span class="btn-icon">✗</span> Không tham dự
+            </button>
+          </div>
+          <div id="rsvp-result" class="rsvp-result" style="display:none"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: Footer ===== -->
+    <section class="section section-footer" id="section-footer">
+      <div class="footer-inner">
+        <p class="footer-thanks reveal-child" data-delay="0">Cảm ơn bạn!</p>
+        <p class="footer-names reveal-child" data-delay="100">Hòa My & Văn Quốc</p>
+        <p class="footer-date reveal-child" data-delay="200">25 . 04 . 2026</p>
+        <div class="footer-hearts reveal-child" data-delay="300">♥ ♥ ♥</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" style="display:none">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Ảnh phóng to" />
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
