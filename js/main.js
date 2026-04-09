@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ========== 2. PETALS ========== */
   const petalsContainer = document.getElementById('petals-bg');
-  const petalColors = ['#fd79a8','#e84393','#fab1a0','#ffeaa7','#fce4ec','#f8bbd0'];
+  const petalColors = ['#fd79a8', '#e84393', '#fab1a0', '#ffeaa7', '#fce4ec', '#f8bbd0'];
   for (let i = 0; i < 30; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
@@ -80,34 +80,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const particles = ['✨', '💖', '🎇', '🌸', '🎉'];
     for (let i = 0; i < 40; i++) {
-        const particle = document.createElement('div');
-        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
-        particle.style.position = 'absolute';
-        particle.style.left = '50%';
-        particle.style.top = '40%';
-        particle.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
-        particle.style.transform = 'translate(-50%, -50%)';
-        particle.style.transition = 'all 1.5s cubic-bezier(0.25, 1, 0.5, 1)';
-        particle.style.opacity = '1';
-        
-        // Random trajectory (outward and upward bias)
-        const angle = Math.random() * Math.PI * 2;
-        const radius = Math.random() * 250 + 100;
-        const tx = Math.cos(angle) * radius;
-        const ty = Math.sin(angle) * radius - 150; 
+      const particle = document.createElement('div');
+      particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+      particle.style.position = 'absolute';
+      particle.style.left = '50%';
+      particle.style.top = '40%';
+      particle.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+      particle.style.transform = 'translate(-50%, -50%)';
+      particle.style.transition = 'all 1.5s cubic-bezier(0.25, 1, 0.5, 1)';
+      particle.style.opacity = '1';
 
-        fwContainer.appendChild(particle);
+      // Random trajectory (outward and upward bias)
+      const angle = Math.random() * Math.PI * 2;
+      const radius = Math.random() * 250 + 100;
+      const tx = Math.cos(angle) * radius;
+      const ty = Math.sin(angle) * radius - 150;
 
+      fwContainer.appendChild(particle);
+
+      requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                particle.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) rotate(${Math.random()*360}deg) scale(${Math.random() + 0.5})`;
-                particle.style.opacity = '0';
-            });
+          particle.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) rotate(${Math.random() * 360}deg) scale(${Math.random() + 0.5})`;
+          particle.style.opacity = '0';
         });
+      });
     }
 
     setTimeout(() => {
-        fwContainer.remove();
+      fwContainer.remove();
     }, 2000);
   }
 
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ========== 5. FLOATING HEARTS ========== */
   function startFloatingHearts() {
     const container = document.getElementById('floating-hearts');
-    const hearts = ['♥','♡','❤','💕','💗'];
+    const hearts = ['♥', '♡', '❤', '💕', '💗'];
     setInterval(() => {
       const el = document.createElement('span');
       el.className = 'f-heart';
@@ -218,7 +218,70 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ========== 8. RSVP ========== */
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/library/d/1u1Z4THLFZfSsnlhMH_1Dz4r8WKGPSHDIJN8Y9PnzFNMYONM95_9iCt_r/1';
+  // const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyH9Uj2dqRN5eyIxBCkj8VUT33xPRBbJsB6JiRciK33yQUkrq1QBiQq7xGtOWy7gluN/exec';
+
+  // function showToast(msg) {
+  //   const toast = document.getElementById('toast');
+  //   toast.textContent = msg;
+  //   toast.classList.add('show');
+  //   setTimeout(() => toast.classList.remove('show'), 4000);
+  // }
+
+  // document.querySelectorAll('.rsvp-btn').forEach(btn => {
+  //   btn.addEventListener('click', async () => {
+  //     const attendance = btn.dataset.response; // "Tham dự" or "Không tham dự"
+  //     const name = guestName || 'Khách mời';
+
+  //     document.querySelectorAll('.rsvp-btn').forEach(b => {
+  //       b.disabled = true;
+  //       b.style.opacity = '0.6';
+  //     });
+
+  //     try {
+  //       const payload = {
+  //         key: "wedding2026",
+  //         id: guestId,
+  //         name: name,
+  //         confirm: attendance,
+  //         message: ""
+  //       };
+
+  //       const response = await fetch(APPS_SCRIPT_URL, {
+  //         method: 'POST',
+  //         // Sử dụng text/plain để tránh preflight request (CORS error) trên trình duyệt
+  //         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+  //         body: JSON.stringify(payload)
+  //       });
+
+  //       const data = await response.json();
+  //       const resultEl = document.getElementById('rsvp-result');
+  //       resultEl.style.display = 'block';
+
+  //       if (data.status === "exists") {
+  //         resultEl.innerHTML = '💡 Hệ thống đã ghi nhận phản hồi của <strong>' + name + '</strong> từ trước rồi nhé. Xin cảm ơn!';
+  //       } else if (data.status === "success") {
+  //         if (attendance === 'Tham dự') {
+  //           resultEl.innerHTML = '🎉 Cảm ơn <strong>' + name + '</strong>! Chúng tôi rất vui khi bạn tham dự.';
+  //         } else {
+  //           resultEl.innerHTML = '😢 Rất tiếc! Hy vọng lần sau sẽ gặp bạn, <strong>' + name + '</strong>.';
+  //         }
+  //       } else {
+  //         throw new Error("Lỗi API server");
+  //       }
+
+  //       showToast('Đã ghi nhận phản hồi của bạn!');
+  //     } catch (err) {
+  //       console.error('RSVP Error:', err);
+  //       showToast('Có lỗi kết nối, vui lòng thử lại!');
+  //       document.querySelectorAll('.rsvp-btn').forEach(b => {
+  //         b.disabled = false;
+  //         b.style.opacity = '1';
+  //       });
+  //     }
+  //   });
+  // });
+
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbywu_MIvXwCirWlZH7suMs9gJrdUPsPkXiyTOUmBDnI4TNP_pAaBI8ekd6SJDwGHhrh/exec';
 
   function showToast(msg) {
     const toast = document.getElementById('toast');
@@ -227,57 +290,83 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.classList.remove('show'), 4000);
   }
 
-  document.querySelectorAll('.rsvp-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const attendance = btn.dataset.response; // "Tham dự" or "Không tham dự"
-      const name = guestName || 'Khách mời';
+  function setButtonsDisabled(disabled) {
+    document.querySelectorAll('.rsvp-btn').forEach(btn => {
+      btn.disabled = disabled;
+      btn.style.opacity = disabled ? '0.6' : '1';
+    });
+  }
 
-      document.querySelectorAll('.rsvp-btn').forEach(b => {
-        b.disabled = true;
-        b.style.opacity = '0.6';
-      });
+  async function submitRSVP(attendance) {
+    const name = guestName || 'Khách mời';
 
-      try {
-        const payload = {
+    const payload = {
+      key: "wedding2026",
+      id: guestId,
+      name: name,
+      confirm: attendance,
+      message: ""
+    };
+
+    try {
+      // const response = await fetch(APPS_SCRIPT_URL, {
+      //   method: 'POST',
+      //   body: new URLSearchParams(payload) // ✅ FIX CHÍNH
+      // });
+
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
           key: "wedding2026",
           id: guestId,
-          name: name,
+          name: guestName || "Khách mời",
           confirm: attendance,
           message: ""
-        };
+        })
+      });
 
-        const response = await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          // Sử dụng text/plain để tránh preflight request (CORS error) trên trình duyệt
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        });
+      const text = await response.text();
 
-        const data = await response.json();
-        const resultEl = document.getElementById('rsvp-result');
-        resultEl.style.display = 'block';
-
-        if (data.status === "exists") {
-          resultEl.innerHTML = '💡 Hệ thống đã ghi nhận phản hồi của <strong>' + name + '</strong> từ trước rồi nhé. Xin cảm ơn!';
-        } else if (data.status === "success") {
-          if (attendance === 'Tham dự') {
-            resultEl.innerHTML = '🎉 Cảm ơn <strong>' + name + '</strong>! Chúng tôi rất vui khi bạn tham dự.';
-          } else {
-            resultEl.innerHTML = '😢 Rất tiếc! Hy vọng lần sau sẽ gặp bạn, <strong>' + name + '</strong>.';
-          }
-        } else {
-          throw new Error("Lỗi API server");
-        }
-
-        showToast('Đã ghi nhận phản hồi của bạn!');
-      } catch (err) {
-        console.error('RSVP Error:', err);
-        showToast('Có lỗi kết nối, vui lòng thử lại!');
-        document.querySelectorAll('.rsvp-btn').forEach(b => {
-          b.disabled = false;
-          b.style.opacity = '1';
-        });
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        console.error("Response không phải JSON:", text);
+        throw new Error("Invalid response");
       }
+
+      renderResult(data, name, attendance);
+      showToast('Đã ghi nhận phản hồi của bạn!');
+
+    } catch (err) {
+      console.error('RSVP Error:', err);
+      showToast('Có lỗi kết nối, vui lòng thử lại!');
+      setButtonsDisabled(false);
+    }
+  }
+
+  function renderResult(data, name, attendance) {
+    const resultEl = document.getElementById('rsvp-result');
+    resultEl.style.display = 'block';
+
+    if (data.status === "exists") {
+      resultEl.innerHTML = `💡 Hệ thống đã ghi nhận phản hồi của <strong>${name}</strong> rồi nhé. Xin cảm ơn!`;
+    }
+    else if (data.status === "success") {
+      resultEl.innerHTML = attendance === 'Tham dự'
+        ? `🎉 Cảm ơn <strong>${name}</strong>! Chúng tôi rất vui khi bạn tham dự.`
+        : `😢 Rất tiếc! Hy vọng lần sau sẽ gặp bạn, <strong>${name}</strong>.`;
+    }
+    else {
+      throw new Error("Lỗi API server");
+    }
+  }
+
+  document.querySelectorAll('.rsvp-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const attendance = btn.dataset.response;
+      setButtonsDisabled(true);
+      submitRSVP(attendance);
     });
   });
 
