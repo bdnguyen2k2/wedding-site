@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     envelope.classList.add('flap-open');
 
     // Bắn pháo hoa/tim
-    createFireworks();
+    setTimeout(() => {
+      createFireworks();
+    }, 1000);
 
     // Step 2: Rút thư ra phía sau vỏ trước (z-index thấp)
     setTimeout(() => {
@@ -63,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
       createHeroSparkles();
       initScrollReveal();
       playMusic();
-    }, 6500);
+    }, 4500);
 
     // Dọn dẹp DOM
-    setTimeout(() => overlay.remove(), 8000);
+    setTimeout(() => overlay.remove(), 7000);
   }, 1000);
 
   // Fireworks Animation during opening
